@@ -9,7 +9,7 @@ set /p a=Target Directory:
 echo.
 
 echo 
-ffmpeg -i "%~1" -vf zscale=p=bt709,format=yuv420p -c:v libx264 -preset 0 -crf 0 "%a%\%~n1_CFR.mp4"
+ffmpeg -i "%~1" -vf zscale=p=bt709,format=yuv420p -c:v libx264 -preset 0 -crf 0 "%a%\%~n1_COLORSPACE_REMAPPED.mp4"
 echo.
 
 SHIFT /1
@@ -17,5 +17,5 @@ GOTO :Enc1
 
 :STOP
 
-ECHO CFR process finished.
+ECHO Colorspace remap process finished.
 pause>nul
