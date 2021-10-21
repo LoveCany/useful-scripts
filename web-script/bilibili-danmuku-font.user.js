@@ -15,9 +15,9 @@
 (function () {
     'use strict';
 
-    let curVideoAddr = '苹方-简';
+    let curVideoAddr = '';
     let fontSettings = {
-        fontName: '',
+        fontName: '苹方-简',
         opacity: '1',
         strokeWidth: '1.5px',
         strokeColor: 'black',
