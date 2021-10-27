@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>m3u8 Output</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/options.css" media="all" />
+    </head>
+
+  <body>
+    <div id="wrapper">
+      <header>m3u8 Output</header>
+      
+      <table id="options">
+      <tbody>
+        <tr id="textarea">
+          <td id="mappingsHelp">
+		  <div>M3U8 LINK</div>
+		  <textarea rows="5" cols="100" readonly="true" style="border: none" id="m3u8_url"></textarea>
+			<!--<div id="m3u8_url"></div>-->
+			<br />
+			<br>
+			<br />
+			<div>Total Files <div id="num" class="inline"></div><div id="key" class="inline"></div></div>
+			<textarea rows="30" cols="100" readonly="true" style="border: none" wrap="off" id="html"></textarea>
+          </td>
+        </tr>
+
+		   <tr id="next_m3u8_tr" style="display:none">
+            <td>
+				<div>Select the next level of m3u8 file</div>
+                <div class="help">
+                  <div class="example">
+                    Another m3u8 file is nested in this m3u8 file
+                  </div>
+                </div>
+              <div id="next_m3u8"></div>
+            </td>
+          </tr>
+		  
+      </tbody>
+      </table>
+      <button id="Download">Download as txt file</button>
+	  <button id="CopyAll">Copy All Text</button>
+      <button id="Copym3u8Link" class="m3u8button">Copy m3u8 Link</button>
+	  <button id="Text">Text format</button>
+	  
+	<script src="js/jquery.min.js"></script>
+	<script src="js/m3u8.js"></script>
+</body>
+</html>

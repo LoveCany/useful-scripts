@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <title>Cat Scratching Setting</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/options.css" media="all" />
+        <script src="js/jquery.min.js"></script>
+    </head>
+
+  <body>
+    <div id="wrapper">
+      <header>Cat Scratching Setting</header>
+      <table id="options">
+      <tbody>
+        <tr>
+          <td class="caption">Custom Suffix Crawling</td>
+          <td>
+            <div class="help">
+              <div class="example">
+			  <br><br/>
+			  <br><br/>
+                Without the "." Extension
+				<br><br/>
+                Some non-media resource files will not be crawled.
+              </div>
+            </div>
+            <div>
+               <div id="exclusionScrollBox">
+                  <table id="exclusionRules">
+                    <tbody>
+                     <tr>
+                        <td><span class="ExtText">Extension Name</span></td>
+						<br>
+						<br/>
+                     </tr>
+                    </tbody>
+                    <tbody id="ExtTd">  
+                    </tbody>
+                  </table>
+               </div>
+               <button id="AddExt" class="AddButton">Add Extension</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="caption">Content-Type</td>
+          <td>
+            <div class="help">
+              <div class="example">
+                一Some media files use abnormal extensions and need to be judged by MIME
+                <br><br>
+                常用格式对照表 <a href="http://tool.oschina.net/commons" target="_blank">http://tool.oschina.net/commons</a>
+                <br><br>
+                Support wildcards, matching extensions first
+              </div>
+            </div>
+            <div>
+               <div id="exclusionScrollBox">
+                  <table id="exclusionRules">
+                    <tbody>
+                     <tr>
+                        <td><span class="ExtType">MIME type</span></td>
+                     </tr>
+                    </tbody>
+                    <tbody id="ExtTy">  
+                    </tbody>
+                  </table>
+               </div>
+               <button id="AddType" class="AddButton">Add MIME</button>
+            </div>
+          </td>
+        </tr>        
+        <tr>
+          <td class="caption">other options</td>
+          <td class="booleanOption">
+            <div class="help">
+              <div class="example">
+                Some website properties have their own parameters.
+                <br>
+                Check Ignore parameter to filter duplicate data.
+              </div>
+            </div>
+              <label>
+                <input id="repeat" type="checkbox">
+                Ignore Parameters (avoid duplication)
+              </label>
+          </td>
+        </tr>
+          <tr>
+            <td class="caption"></td>
+            <td>
+              <input id="repeatReg" type="text">
+			  <br></br>
+              <div class="example info">Regularization of matching video parameters, used to remove parameters. 
+			  If you don't understand the rules, <br> you can use reset to restore.</div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td class="caption"></td>
+              <td class="booleanOption">
+                  <label>
+                    <input id="TitleName" type="checkbox">
+                    Use the page title as the file name when downloading
+                  </label>
+              </td>
+          </tr>
+          
+          <tr>
+            <td class="caption"></td>
+              <td class="booleanOption">
+                  <label>
+                    <input id="Debug" type="checkbox">
+                    Debug mode
+                  </label>
+              </td>
+          </tr>
+		  
+      </tbody>
+      </table>
+      <button id="ResetExt" class="AddButton">Restore Settings to Default</button>
+      <button id="SaveExt" class="AddButton">Save All Settings</button>
+    </div>
+    
+<div id="tempntc" class="tempntc">
+      <div id="tempntcDia" class="tempntc">
+        <div id="TempntcText" class="tempntc">test</div>
+    </div>
+</div>
+
+    <script src="js/init.js"></script>
+    <script src="js/options.js"></script>
+</body>
+</html>
