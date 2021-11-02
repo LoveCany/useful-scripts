@@ -8,3 +8,4 @@ HOST,smtp.gmail.com,Mail
 HOST,imap-mail.outlook.com,Mail
 HOST,smtp-mail.outlook.com,Mail
 HOST-SUFFIX,smartmailcloud.com,Mail
+HOST-SUFFIX,autoconfig.yahoo.co.jp,Mail
