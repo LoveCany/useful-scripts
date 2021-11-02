@@ -1,0 +1,10 @@
+# > Mail
+HOST,imap.mail.yahoo.co.jp,Mail
+HOST,smtp.mail.yahoo.co.jp,Mail
+HOST,imap.yandex.com,Mail
+HOST,smtp.yandex.com,Mail
+HOST,imap.gmail.com,Mail
+HOST,smtp.gmail.com,Mail
+HOST,imap-mail.outlook.com,Mail
+HOST,smtp-mail.outlook.com,Mail
+DOMAIN-SUFFIX,smartmailcloud.com,Mail
