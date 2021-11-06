@@ -1,11 +1,12 @@
 <Configuration>
-    <MappedFolder>
-        <HostFolder>%HomePath%\Videos</HostFolder>
-        <!--'%HOMEPATH%' variable might also available in sandbox, but I think it safer for absolute one-->
-        <SandboxFolder>C:\Users\WDAGUtilityAccount\Videos</SandboxFolder>
-        <!--TMSR should write output file to host folder directly-->
-        <ReadOnly>false</ReadOnly>
-    </MappedFolder>
+    <MappedFolders>
+        <MappedFolder>
+            <HostFolder>C:\Users\LoveCany\Videos</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\Videos</SandboxFolder>
+            <!--TMSR should write output file to host folder directly-->
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder>
+    </MappedFolders>
     <AudioInput>Disable</AudioInput>
     <VideoInput>Disable</VideoInput>
     <MemoryInMB>4096</MemoryInMB>
