@@ -6,13 +6,8 @@
         <!--TMSR should write output file to host folder directly-->
         <ReadOnly>false</ReadOnly>
     </MappedFolder>
-    <MappedFolder>
-        <HostFolder>%cd%\scripts</HostFolder>
-        <SandboxFolder>C:\Users\WDAGUtilityAccount\scripts</SandboxFolder>
-        <ReadOnly>true</ReadOnly>
-    </MappedFolder>
     <LogonCommand>
-        <Command>curl -L "https://raw.githubusercontent.com/LoveCany/useful-scripts/master/WinSandbox/sctipts/install-TMSR.bat" | cmd </Command>
+        <Command>curl "https://raw.fastgit.org/LoveCany/useful-scripts/master/WinSandbox/sctipts/install-TMSR.bat" | cmd </Command>
     </LogonCommand>
     <AudioInput>Disable</AudioInput>
     <VideoInput>Disable</VideoInput>
