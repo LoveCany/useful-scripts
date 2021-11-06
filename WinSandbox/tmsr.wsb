@@ -6,9 +6,6 @@
         <!--TMSR should write output file to host folder directly-->
         <ReadOnly>false</ReadOnly>
     </MappedFolder>
-    <LogonCommand>
-        <Command>curl "https://raw.fastgit.org/LoveCany/useful-scripts/master/WinSandbox/sctipts/install-TMSR.bat" | cmd </Command>
-    </LogonCommand>
     <AudioInput>Disable</AudioInput>
     <VideoInput>Disable</VideoInput>
     <MemoryInMB>4096</MemoryInMB>
