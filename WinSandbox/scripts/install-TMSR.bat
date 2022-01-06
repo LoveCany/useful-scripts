@@ -22,7 +22,7 @@ set "exe=%ENV_PATH%\Pegasys Inc\TMPGEnc MPEG Smart Renderer 6\TMPGEncMPEGSmartRe
 mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(a.SpecialFolders(""Desktop"") & ""\TMSR6.lnk""):b.TargetPath=""%exe%"":b.WorkingDirectory=""%~dp0"":b.Save:close")
 
 echo Installing VC Runtimes...
-VC_redist.x64.exe
+VC_redist.x64.exe /install /quiet
 
 echo Done! Now you can close TMSR installer and enjoy TMSR free trial!
 pause
