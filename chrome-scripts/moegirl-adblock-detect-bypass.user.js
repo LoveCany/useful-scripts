@@ -6,15 +6,13 @@
 // @author       LoveCany
 // @match        https://zh.moegirl.org.cn/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=moegirl.org
-// @grant        GM_addStyle
-// @run-at       document-idle
 // ==/UserScript==
 
 (() => {
-  let  observer = new MutationObserver(function(mutations) {
-    const e = document.getElementById('fc-ab-root');
-    if (e) {
-      e.remove();
+  let observer = new MutationObserver(function(mutations) {
+    const e = document.getElementsByClassName('fc-ab-root');
+    if (e.length > 0) {
+      e[0].remove();
       this.disconnect();
     }
   });
