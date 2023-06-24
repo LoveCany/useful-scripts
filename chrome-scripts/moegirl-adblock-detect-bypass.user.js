@@ -10,9 +10,9 @@
 
 (() => {
   let observer = new MutationObserver(function(mutations) {
-    const e = document.getElementsByClassName('fc-ab-root');
+    const e = document.getElementsByClassName('fc-close');
     if (e.length > 0) {
-      e[0].remove();
+      e[0].click();
       this.disconnect();
     }
   });
