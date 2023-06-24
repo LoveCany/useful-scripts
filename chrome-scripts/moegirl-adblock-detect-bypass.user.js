@@ -11,42 +11,42 @@
 // ==/UserScript==
 
 (() => {
-    let app;
-    let observer;
-    let throttle = (callback = () => {}, time = 300) => {
-      let timer = -1;
+  let app;
+  let observer;
+  let throttle = (callback = () => {}, time = 300) => {
+    let timer = -1;
 
-      return (...args) => {
-        clearTimeout(timer);
+    return (...args) => {
+      clearTimeout(timer);
 
-        timer = setTimeout(() => {
-          callback(...args);
-        }, time);
-      };
+      timer = setTimeout(() => {
+        callback(...args);
+      }, time);
     };
-    let debounce = (callback = () => {}, time = 300) => {
-      let timer = -1;
+  };
+  let debounce = (callback = () => {}, time = 300) => {
+    let timer = -1;
 
-      return (...args) => {
-        if (timer > -1) {
-          return;
-        }
-
-        timer = setTimeout(() => {
-          callback(...args);
-          clearTimeout(timer);
-          timer = -1;
-        }, time);
-      };
-    };
-    let detectionBypass = () => {
-      if (document.querySelector('fc-ab-root')) {
-        document.querySelector('fc-ab-root').remove();
-        observer?.disconnect?.();
+    return (...args) => {
+      if (timer > -1) {
+        return;
       }
-    };
 
-    app = document.querySelector('body');
-    observer = new MutationObserver(debounce(detectionBypass, 150));
-    observer.observe(app, { childList: true, subtree: true });
-  })();
+      timer = setTimeout(() => {
+        callback(...args);
+        clearTimeout(timer);
+        timer = -1;
+      }, time);
+    };
+  };
+  let detectionBypass = () => {
+    if (document.getElementsByClassName('fc-ab-root')) {
+      document.getElementsByClassName('fc-ab-root')[0].remove()
+      observer?.disconnect?.();
+    }
+  };
+
+  app = document.querySelector('body');
+  observer = new MutationObserver(debounce(detectionBypass, 150));
+  observer.observe(app, { childList: true, subtree: true });
+})();
