@@ -22,7 +22,7 @@ Options:
 # For MacOS users, you may need to install gnu-getopt as original getopt is based on BSD rather than GNU
 # brew install gnu-getopt
 # export PATH="/opt/homebrew/opt/gnu-getopt/bin:$PATH"
-ARGS=$(getopt -o i::o:k:h --long input::,output:,key:,help -- "$@")
+ARGS=$(getopt -o i:o:k:h --long input:,output:,key:,help -- "$@")
 VALID_ARGS=$?
 if [ $VALID_ARGS != "0" ]; then
     usage;
@@ -47,11 +47,9 @@ if [ -z "$INPUT_PATH" ]; then
     exit 1
 fi
 
-DECRYPT_CMD=""
-# Check if decryption key is provided, if given, use shaka packager to decrypt the video
+# If decryption key is given, use shaka packager to decrypt the video
 if [ -n "$DECRYPT_KEY" ]; then
-    DECRYPT_CMD="--decrypt-engine $DECRYPTION_ENGINE --key $DECRYPT_KEY"
+    N_m3u8DL-RE ${INPUT_PATH} --save-name $OUTPUT_NAME --binary-merge --no-date-info --decryption-engine $DECRYPTION_ENGINE --key $DECRYPT_KEY
+else
+    N_m3u8DL-RE ${INPUT_PATH} --save-name $OUTPUT_NAME --binary-merge --no-date-info
 fi
-
-# Run N_m3u8DL-RE to download the video
-N_m3u8DL-RE "${INPUT_PATH}" --save-name $OUTPUT_NAME --binary-merge --no-date-info $DECRYPT_CMD
