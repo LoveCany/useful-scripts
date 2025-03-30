@@ -6,15 +6,19 @@ INPUT_PATH=""
 OUTPUT_NAME=""
 DECRYPTION_ENGINE="SHAKA_PACKAGER"
 DECRYPT_KEY=""
+HEADER=""
+MUX_FORMAT=""
 
 usage() {
     USAGE="Usage: 
     $0 -i <URL> [options]
 
 Options:
-    -o, --output <output_name>  output file name (without extension)
-    -k, --key <decryption key>      format: --key KID:KEY 
-    -h, --help                  show help message
+    -o  output file name (without extension)
+    -k  decryption key, format: --key KID:KEY
+    -h  show help message
+    -H  add header to the request, format: --header 'key:value'
+    -M  mux video and audio after download, format: -M <mux format>
     "
     echo "$USAGE"
 }
@@ -25,7 +29,11 @@ while getopts "$OPTSTRING" opt; do
         i) INPUT_PATH=${OPTARG};;
         o) OUTPUT_NAME=${OPTARG};;
         k) DECRYPT_KEY=${OPTARG};;
+        H) HEADER=${OPTARG};;
+        M) MUX_FORMAT=${OPTARG};;
         h) usage; exit 0;;
+        :) 
+        ?) echo "Invalid option: -${OPTARG}"; usage; exit 1;;
     esac
 done
 
@@ -41,6 +49,12 @@ if [ -n "${OUTPUT_NAME}" ]; then
 fi
 if [ -n "${DECRYPT_KEY}" ]; then
     EXECUTE_CMD="${EXECUTE_CMD} --decryption-engine ${DECRYPTION_ENGINE} --key ${DECRYPT_KEY}"
+fi
+if [ -n "${HEADER}" ]; then
+    EXECUTE_CMD="${EXECUTE_CMD} --header '${HEADER}'"
+fi
+if [ -n "${MUX_FORMAT}" ]; then
+    EXECUTE_CMD="${EXECUTE_CMD} --mux-format ${MUX_FORMAT}"
 fi
 
 EXECUTE_CMD="${EXECUTE_CMD} --binary-merge --no-date-info"
